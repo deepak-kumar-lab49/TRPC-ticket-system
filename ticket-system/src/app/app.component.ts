@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  public close(): void {
+    this.successMsg = null;
+  }
+
   private initializeForm(): void {
     this.form = this.fb.group({
       title: ['', Validators.required],

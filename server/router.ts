@@ -8,7 +8,7 @@ export const appRouter = t.router({
     .input(z.object({ title: z.string(), description: z.string() }))
     .query((req) => {
       return {
-        id: Date.now(),
+        id: `T-${Date.now()}`,
         created: true,
         createdAt: new Date(),
         title: req.input.title,

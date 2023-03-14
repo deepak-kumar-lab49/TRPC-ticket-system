@@ -1,0 +1,13 @@
+.status {
+    position: relative;
+
+    .close {
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1;
+    }
+}
