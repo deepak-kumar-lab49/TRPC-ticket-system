@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from './api.service';
+
+import { ApiService, ITicket } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ApiService } from './api.service';
 })
 export class AppComponent implements OnInit {
   public form!: FormGroup;
-  public successMsg: any;
+  public successMsg!: ITicket | null;
 
   constructor(private apiService: ApiService, private fb: FormBuilder) {}
 
@@ -19,10 +20,12 @@ export class AppComponent implements OnInit {
 
   public onSubmit(): void {
     if (this.form.valid) {
-      this.apiService.createTicket(this.form.value).subscribe((res) => {
-        this.successMsg = res;
-        this.form.reset();
-      });
+      this.apiService
+        .createTicket(this.form.value)
+        .subscribe((res: ITicket) => {
+          this.successMsg = res;
+          this.form.reset();
+        });
     }
   }
 
