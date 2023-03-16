@@ -5,6 +5,5 @@
 3. TRPC works with monorepos and supports many different frameworks on backend and frontend side via TRPC adapters.
 4. TRPC also provides the web socket functionality out of the box.
 5. Commonly used with T3 techstack - https://create.t3.gg/
-6. GitHub: https://github.com/deepak-kumar-lab49/TRPC-ticket-system
 
 **Disclaimer:** No database is used within this POC.
